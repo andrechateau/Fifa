@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="790.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.views.PrincipalController">
+   <children>
+      <Label layoutX="20.0" layoutY="10.0" text="Ultimos resultados:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TableView layoutX="20.0" layoutY="35.0" prefHeight="200.0" prefWidth="560.0">
+        <columns>
+          <TableColumn maxWidth="242.0" minWidth="242.0" prefWidth="242.0" text="Casa" />
+          <TableColumn maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Gols" />
+            <TableColumn maxWidth="15.0" prefWidth="15.0" text="X" />
+            <TableColumn maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Gols" />
+            <TableColumn maxWidth="242.0" minWidth="242.0" prefWidth="242.0" text="Casa" />
+        </columns>
+      </TableView>
+      <Pane layoutX="20.0" layoutY="240.0" prefHeight="155.0" prefWidth="560.0" style="-fx-border-color: #ccc; -fx-background-color: #f0f0f0;">
+         <children>
+            <Label layoutX="124.0" layoutY="2.0" text="Inicar nova partida">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="30.0" layoutY="35.0" prefWidth="150.0" promptText="Time Casa" />
+            <ComboBox layoutX="210.0" layoutY="35.0" prefWidth="150.0" promptText="Time Visitante" />
+            <Label layoutX="190.0" layoutY="35.0" text="X">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="380.0" layoutY="36.0" mnemonicParsing="false" prefWidth="150.0" text="Gerenciar Times" />
+            <Button layoutX="380.0" layoutY="76.0" mnemonicParsing="false" prefWidth="150.0" text="Gerenciar Jogadores" />
+            <Button layoutX="380.0" layoutY="116.0" mnemonicParsing="false" prefWidth="150.0" text="Salvar Dados" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="74.0" prefHeight="25.0" prefWidth="321.0" text="Menssagem de Erro !!" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="590.0" layoutY="35.0" prefHeight="360.0" prefWidth="180.0" style="-fx-border-color: #ccc; -fx-background-color: #f0f0f0;">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefWidth="150.0" text="Gerenciar Times" />
+            <Button layoutX="14.0" layoutY="54.0" mnemonicParsing="false" prefWidth="150.0" text="Gerenciar Jogadores" />
+            <Button layoutX="14.0" layoutY="94.0" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #c0c0c0; -fx-border-color: #ccc; -fx-border-radius: 10px;" text="Salvar Dados" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

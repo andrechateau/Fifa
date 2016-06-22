@@ -13,16 +13,16 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author letic
+ * @author MarcoCosta
  */
 public class Fifa extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("ScenePrincipal.fxml"));
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -33,5 +33,5 @@ public class Fifa extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
