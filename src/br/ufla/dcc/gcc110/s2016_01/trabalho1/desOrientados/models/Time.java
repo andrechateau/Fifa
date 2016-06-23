@@ -122,7 +122,7 @@ public class Time {
      * @return
      */
     public double mediaChute() {
-        if (jogadores.lenght() == 0) {
+        if (jogadores.size() == 0) {
             return 0.0;
         }
         int soma = 0;
@@ -243,6 +243,10 @@ public class Time {
      */
     public int getQtdEmpates() {
         return qtdEmpates;
+    }
+
+    public int getID() {
+        return this.ID;
     }
     
 
