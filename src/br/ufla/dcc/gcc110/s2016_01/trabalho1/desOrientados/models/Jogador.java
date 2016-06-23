@@ -1,5 +1,7 @@
 package br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.models;
 
+import br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.persistence.Repositorio;
+
 /**
  * Classe que representa um jogador que tem como características um ID(para
  * identificar cada jogador), nome, idade, preço, país de origem e posição no

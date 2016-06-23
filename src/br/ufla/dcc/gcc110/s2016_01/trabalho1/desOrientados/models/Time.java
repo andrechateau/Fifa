@@ -1,5 +1,6 @@
 package br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.models;
 
+import br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.persistence.Repositorio;
 import java.util.ArrayList;
 
 /**
@@ -89,7 +90,7 @@ public class Time {
      */
     public Jogador buscarJogador(int ID) {
         for (Jogador jogador : this.jogadores) {
-            if (jogador.getID == ID) {
+            if (jogador.getID() == ID) {
                 return jogador.clone();
             }
         }
@@ -108,13 +109,13 @@ public class Time {
 
     /**
      * Método que remove um jogador do time com ID corresponde ao passado por
-     * parâmetro 
+     * parâmetro
      *
      * @param ID
      * @return
      */
     public boolean removeJogador(int ID) {
-        return this.jogadores.remove(this.jogadores.buscarJogador(ID));
+        return this.jogadores.remove(this.buscarJogador(ID));
     }
 
     /**
@@ -122,14 +123,14 @@ public class Time {
      * @return
      */
     public double mediaChute() {
-        if (jogadores.size() == 0) {
+        if (jogadores.isEmpty()) {
             return 0.0;
         }
         int soma = 0;
         for (Jogador jogador : jogadores) {
-            soma = jogador.getChute();
+            soma += jogador.getChute();
         }
-        return Double(soma / jogadores.lenght());
+        return soma / jogadores.size();
     }
 
     /**
@@ -137,14 +138,14 @@ public class Time {
      * @return
      */
     public double mediaPasse() {
-        if (jogadores.lenght() == 0) {
+        if (jogadores.isEmpty()) {
             return 0.0;
         }
         int soma = 0;
         for (Jogador jogador : jogadores) {
-            soma = jogador.getPasse();
+            soma += jogador.getPasse();
         }
-        return Double(soma / jogadores.lenght());
+        return soma / jogadores.size();
     }
 
     /**
@@ -152,14 +153,14 @@ public class Time {
      * @return
      */
     public double mediaVelocidade() {
-        if (jogadores.lenght() == 0) {
+        if (jogadores.isEmpty()) {
             return 0.0;
         }
         int soma = 0;
         for (Jogador jogador : jogadores) {
-            soma = jogador.getVelociade();
+            soma += jogador.getVelocidade();
         }
-        return Double(soma / jogadores.lenght());
+        return (double) soma / (double) jogadores.size();
     }
 
     /**
@@ -167,14 +168,14 @@ public class Time {
      * @return
      */
     public double mediaBlefe() {
-        if (jogadores.lenght() == 0) {
+        if (jogadores.isEmpty()) {
             return 0.0;
         }
         int soma = 0;
         for (Jogador jogador : jogadores) {
-            soma = jogador.getBlefe();
+          soma += jogador.getBlefe();
         }
-        return Double(soma / jogadores.lenght());
+        return (double) soma / (double)jogadores.size();
     }
 
     /**
@@ -182,38 +183,42 @@ public class Time {
      * @return
      */
     public double mediaDrible() {
-        if (jogadores.lenght() == 0) {
+        if (jogadores.isEmpty()) {
             return 0.0;
         }
         int soma = 0;
         for (Jogador jogador : jogadores) {
-            soma = jogador.getDrible();
+            soma += jogador.getDrible();
         }
-        return Double(soma / jogadores.lenght());
+        return (double) soma / (double)jogadores.size();
     }
+
     /**
-     * 
-     * @param qtdGolsMarcados 
+     *
+     * @param qtdGolsMarcados
      */
-    public void adicionarGols(int qtdGolsMarcados){
+    public void adicionarGols(int qtdGolsMarcados) {
         this.qtdGolsMarcados += qtdGolsMarcados;
     }
+
     /**
-     * 
+     *
      */
-    public void adicionarVitoria(){
+    public void adicionarVitoria() {
         this.qtdVitorias++;
     }
+
     /**
-     * 
+     *
      */
-    public void adicionarDerrota(){
+    public void adicionarDerrota() {
         this.qtdDerrotas++;
     }
+
     /**
-     * 
+     *
      */
-    public void adicionarEmpate(){
+    public void adicionarEmpate() {
         this.qtdEmpates++;
     }
 
@@ -248,6 +253,5 @@ public class Time {
     public int getID() {
         return this.ID;
     }
-    
 
 }
