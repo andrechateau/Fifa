@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author Marco Costa
+ * @authors Andre Chateaubriand, Leticia Diniz e Marco Costa
  */
 public class GerenciarTimesController implements Initializable {
 

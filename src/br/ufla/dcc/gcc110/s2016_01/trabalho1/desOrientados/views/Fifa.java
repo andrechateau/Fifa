@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author MarcoCosta
+ * @author Marco Costa
  */
 public class Fifa extends Application {
 
