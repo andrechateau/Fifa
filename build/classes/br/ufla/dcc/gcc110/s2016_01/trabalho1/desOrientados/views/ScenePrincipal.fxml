@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.views.PrincipalController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.views.PrincipalController">
+   <children>
+      <Label alignment="CENTER" layoutX="233.0" layoutY="25.0" text="Ultimos resultados">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TableView layoutX="20.0" layoutY="50.0" prefHeight="200.0" prefWidth="560.0">
+        <columns>
+          <TableColumn maxWidth="235.0" minWidth="235.0" prefWidth="235.0" text="Casa" />
+          <TableColumn maxWidth="35.0" minWidth="35.0" prefWidth="35.0" text="Gols" />
+            <TableColumn maxWidth="20.0" minWidth="20.0" prefWidth="20.0" text="X" />
+            <TableColumn maxWidth="30.0" minWidth="35.0" prefWidth="30.0" text="Gols" />
+            <TableColumn maxWidth="235.0" minWidth="235.0" prefWidth="235.0" text="Casa" />
+        </columns>
+      </TableView>
+      <Pane layoutX="20.0" layoutY="255.0" prefHeight="155.0" prefWidth="560.0" style="-fx-border-color: #ccc; -fx-background-color: #f0f0f0;">
+         <children>
+            <Label layoutX="214.0" layoutY="2.0" text="Inicar nova partida">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="10.0" layoutY="35.0" prefHeight="25.0" prefWidth="260.0" promptText="Time Casa" />
+            <ComboBox layoutX="290.0" layoutY="35.0" prefHeight="25.0" prefWidth="260.0" promptText="Time Visitante" />
+            <Label layoutX="275.0" layoutY="35.0" text="X">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="120.0" layoutY="78.0" prefHeight="25.0" prefWidth="321.0" text="Menssagem de Erro ou resultado!!" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="431.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Iniciar Partida" />
+         </children>
+      </Pane>
+      <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Gerenciar">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Times" />
+                  <MenuItem mnemonicParsing="false" text="Jogadores" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Dados">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Salvar" />
+                  <MenuItem mnemonicParsing="false" text="Reiniciar" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
 </AnchorPane>
