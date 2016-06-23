@@ -1,6 +1,7 @@
 package br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.models;
 
 import br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.persistence.Repositorio;
+import java.io.Serializable;
 
 /**
  * Classe que representa um jogador que tem como características um ID(para
@@ -12,7 +13,7 @@ import br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.persistence.Repositor
  *
  * @authors Andre Chateubriand, Leticia Diniz e Marco Costa
  */
-public class Jogador {
+public class Jogador implements Serializable{
 
     // Variavel da classe qu irá gerenciar ID's dos jogadores
     private static int controladorID = Repositorio.getUltimoIDJogador();

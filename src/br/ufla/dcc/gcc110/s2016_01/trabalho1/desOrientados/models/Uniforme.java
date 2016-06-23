@@ -1,12 +1,13 @@
 package br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.models;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /**
  *
  * @authors Andre Chateubriand, Leticia Diniz e Marco Costa
  */
-public class Uniforme {
+public class Uniforme implements Serializable{
     
     private Color corCamisa;
     private Color corCalcao;

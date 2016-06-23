@@ -11,16 +11,18 @@ import br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.models.*;
  */
 public class Repositorio {
 
-    private static ArrayList<Time> timeList = new ArrayList<>();
-    private static ArrayList<Partida> partidaList = new ArrayList<>();
+    private static final String FILE_NAME = "saveFifa";
 
+    /* private static ArrayList<Time> timeList = new ArrayList<>();
+    private static ArrayList<Partida> partidaList = new ArrayList<>();
+     */
     /**
      * Salva um Time no pre-save.
      *
      * @param time Time a ser salvo
      */
     public static void saveTime(Time time) {
-        getTimeList().add(time);
+        new FileHandler(FILE_NAME).preSave(time);
     }
 
     /**
@@ -29,7 +31,7 @@ public class Repositorio {
      * @param partida Partida a ser salva
      */
     public static void savePartida(Partida partida) {
-        getPartidaList().add(partida);
+        new FileHandler(FILE_NAME).preSave(partida);
     }
 
     /**
@@ -37,6 +39,7 @@ public class Repositorio {
      *
      */
     public static void save() {
+        new FileHandler(FILE_NAME).save();
 
     }
 
@@ -46,8 +49,7 @@ public class Repositorio {
      *
      */
     public static void reset() {
-        timeList.clear();
-        partidaList.clear();
+        new FileHandler(FILE_NAME).clearAll();
     }
 
     /**
@@ -57,6 +59,7 @@ public class Repositorio {
      * @return Time com o ID requerido
      */
     public static Time loadTime(int ID) {
+
         for (Time time : getTimeList()) {
             if (time.getID() == ID) {
                 return time;
@@ -74,7 +77,7 @@ public class Repositorio {
     public static Jogador loadJogador(int ID) {
         Jogador j;
         for (Time time : getTimeList()) {
-            j = time.getJogador(ID);
+            j = time.buscarJogador(ID);
             if (j != null) {
                 return j;
             }
@@ -147,13 +150,22 @@ public class Repositorio {
      * @return uma lista com todos os Times
      */
     public static ArrayList<Time> getTimeList() {
-        return timeList;
+        return new FileHandler(FILE_NAME).getTimeList();
     }
 
     /**
      * @return uma lista com todas as Partidas
      */
     public static ArrayList<Partida> getPartidaList() {
-        return partidaList;
+
+        return new FileHandler(FILE_NAME).getPartidaList();
+    }
+
+      public static void main(String[] args) {
+        Jogador joao = new Jogador(FILE_NAME, 0, 0, FILE_NAME, Jogador.Posicao.GOLEIRO, 0, 0, 0, 0, 0, 0);
+        Time t = new Time(FILE_NAME, FILE_NAME);
+        t.addJogador(joao);
+        Repositorio.saveTime(t);
+       
     }
 }

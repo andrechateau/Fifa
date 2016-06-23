@@ -1,6 +1,7 @@
 package br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.models;
 
 import br.ufla.dcc.gcc110.s2016_01.trabalho1.desOrientados.persistence.Repositorio;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  *
  * @authors Andre Chateaubriand, Leticia Diniz e Marco Costa
  */
-public class Time {
+public class Time implements Serializable{
 
     //Varivael da classe que irá gerenciar Id's do time;
     private static int controladorId = Repositorio.getUltimoIDTime();
